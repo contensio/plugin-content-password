@@ -1,0 +1,1 @@
+{"name":"contensio/plugin-content-password","description":"Content password protection plugin for Contensio.","type":"contensio-plugin","license":"MIT","require":{"php":"^8.2","contensio/core":"^2.0"},"autoload":{"psr-4":{"Contensio\\Plugins\\ContentPassword\\":"src/"}},"extra":{"contensio":{"providers":["Contensio\\Plugins\\ContentPassword\\ContentPasswordServiceProvider"]}}}

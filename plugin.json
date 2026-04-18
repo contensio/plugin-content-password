@@ -1,0 +1,1 @@
+{"name":"Content Password","slug":"content-password","version":"1.0.0","description":"Password-protect individual posts or pages. Store bcrypt hash in content_meta, show prompt form to visitors.","author":"Contensio","author_url":"https://contensio.com","requires_contensio":"2.0.0","provider":"Contensio\\Plugins\\ContentPassword\\ContentPasswordServiceProvider"}
