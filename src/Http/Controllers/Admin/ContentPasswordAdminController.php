@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Content Password — Contensio plugin.
+ * Content Password - Contensio plugin.
  * https://contensio.com
  *
  * @copyright   Copyright (c) 2026 Iosif Gabriel Chimilevschi
@@ -44,7 +44,7 @@ class ContentPasswordAdminController extends Controller
                 ];
             });
 
-        return view('content-password::admin.index', compact('items'));
+        return view('contensio-content-password::admin.index', compact('items'));
     }
 
     /**

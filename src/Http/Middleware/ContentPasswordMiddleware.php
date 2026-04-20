@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Content Password — Contensio plugin.
+ * Content Password - Contensio plugin.
  * https://contensio.com
  *
  * @copyright   Copyright (c) 2026 Iosif Gabriel Chimilevschi
@@ -52,19 +52,19 @@ class ContentPasswordMiddleware
             return $next($request);
         }
 
-        // POST — verify password
+        // POST - verify password
         if ($request->isMethod('POST') && $request->has('content_password')) {
             if (Hash::check($request->input('content_password'), $hash)) {
                 session([$sessionKey => true]);
                 return redirect()->back();
             }
-            return response()->view('content-password::prompt', [
+            return response()->view('contensio-content-password::prompt', [
                 'error' => 'Incorrect password. Please try again.',
                 'slug'  => $slug,
             ], 401);
         }
 
-        // GET — show password prompt
-        return response()->view('content-password::prompt', ['error' => null, 'slug' => $slug], 200);
+        // GET - show password prompt
+        return response()->view('contensio-content-password::prompt', ['error' => null, 'slug' => $slug], 200);
     }
 }

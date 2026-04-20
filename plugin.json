@@ -4,7 +4,7 @@
     "description": "Password-protect individual posts or pages. Store bcrypt hash in content_meta, show prompt form to visitors.",
     "author": "Contensio",
     "author_url": "https://contensio.com",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "provider": "Contensio\\Plugins\\ContentPassword\\ContentPasswordServiceProvider",
     "autoload": {
         "psr-4": {

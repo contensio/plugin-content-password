@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Content Password — Contensio plugin.
+ * Content Password - Contensio plugin.
  * https://contensio.com
  *
  * @copyright   Copyright (c) 2026 Iosif Gabriel Chimilevschi
@@ -18,18 +18,20 @@ use Illuminate\Support\ServiceProvider;
 
 class ContentPasswordServiceProvider extends ServiceProvider
 {
+    protected string $ns = 'contensio-content-password';
+
     public function boot(): void
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'content-password');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', $this->ns);
 
-        // Gate middleware — runs on all web requests, self-limits to slug routes
+        // Gate middleware - runs on all web requests, self-limits to slug routes
         $this->app->make(Router::class)
             ->pushMiddlewareToGroup('web', ContentPasswordMiddleware::class);
 
         $this->registerRoutes();
 
         Hook::add('contensio/admin/settings-cards', function (): string {
-            return view('content-password::partials.settings-hub-card')->render();
+            return view($this->ns . '::partials.settings-hub-card')->render();
         });
     }
 

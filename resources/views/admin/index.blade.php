@@ -49,7 +49,7 @@
         </div>
 
         {{-- Set / update password --}}
-        <form method="POST" action="{{ route('content-password.set', $item['id']) }}" class="flex items-center gap-2 shrink-0">
+        <form method="POST" action="{{ route('contensio-content-password.set', $item['id']) }}" class="flex items-center gap-2 shrink-0">
             @csrf
             <input type="password"
                    name="password"
@@ -63,7 +63,7 @@
 
         {{-- Remove password --}}
         @if($item['has_password'])
-        <form method="POST" action="{{ route('content-password.remove', $item['id']) }}" class="shrink-0">
+        <form method="POST" action="{{ route('contensio-content-password.remove', $item['id']) }}" class="shrink-0">
             @csrf
             <button type="submit" class="text-sm text-gray-400 hover:text-red-600 transition-colors px-2 py-1.5 rounded-lg">
                 Remove
